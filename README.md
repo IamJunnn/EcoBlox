@@ -1,5 +1,11 @@
 # Eco Blox — Learn & Create
 
+<p align="left">
+  <a href="https://vercel.com" target="_blank"><img alt="Deploy with Vercel" src="https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel" /></a>
+  <a href="https://github.com/bhaveshpatil/EcoBlox/actions" target="_blank"><img alt="CI" src="https://img.shields.io/badge/CI-GitHub_Actions-2088FF?logo=githubactions" /></a>
+  <img alt="License" src="https://img.shields.io/badge/License-MIT-green" />
+</p>
+
 An educational React + TypeScript web app that teaches students about environmental stewardship while creating experiences inspired by Roblox. The site showcases program highlights, student roles, safety information, and a welcoming hero section — all built with modern UI components and a responsive layout.
 
 ## Features
@@ -25,8 +31,8 @@ Prerequisites:
 Clone and run locally:
 ```sh
 git clone <YOUR_REPO_URL>
-cd eco-blox-learn-create-91-main
-npm install
+cd EcoBlox
+npm ci
 npm run dev
 ```
 
@@ -60,11 +66,34 @@ eco-blox-learn-create-91-main/
   package.json
 ```
 
+## Screenshots & Media
+
+Below are some media assets used within the app. You can embed these in your docs, issues, or PRs as needed.
+
+Hero image:
+
+![Hero students](src/assets/hero-students.jpg)
+
+Program visuals:
+
+![Roblox environmental](src/assets/roblox-environmental.jpg)
+![Student roles](src/assets/student-roles.jpg)
+
+Section animations (from `public/`):
+
+![Section 1](public/section1.gif)
+![Section 2](public/section2.gif)
+![Section 3](public/section3.gif)
+![Section 4](public/section4.gif)
+![Section 6](public/section6.gif)
+
 ## Available Scripts
 
-- `npm run dev`: Start the dev server
-- `npm run build`: Build the app for production
+- `npm run dev`: Start the dev server (Vite)
+- `npm run build`: Build the app for production (to `dist/`)
+- `npm run build:dev`: Build in development mode
 - `npm run preview`: Preview the built app locally
+- `npm run lint`: Run ESLint
 
 ## Configuration
 
@@ -83,6 +112,12 @@ Typical flow (example: Vercel):
 2. Import the repo in Vercel
 3. Framework preset: Vite
 4. Build command: `npm run build` — Output directory: `dist`
+
+## Troubleshooting
+
+- If the dev server doesn’t open automatically, visit `http://localhost:8080/` (port may vary).
+- If port 5173 is expected but unavailable, Vite will pick another free port and print it in the terminal.
+- If you see dependency issues, try reinstalling with `npm ci`.
 
 ## Contributing
 

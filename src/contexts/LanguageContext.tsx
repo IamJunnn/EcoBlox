@@ -291,19 +291,21 @@ const translations = {
 };
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
-
-  useEffect(() => {
-    // Load saved language preference
-    const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'ko')) {
-      setLanguage(savedLanguage);
-    }
-  }, []);
+  const [language, setLanguage] = useState<Language>(() => {
+    const savedLanguage = localStorage.getItem('language') as Language | null;
+    return savedLanguage === 'ko' ? 'ko' : 'en';
+  });
 
   useEffect(() => {
     // Save language preference
     localStorage.setItem('language', language);
+  }, [language]);
+
+  useEffect(() => {
+    // Reflect language in HTML tag for accessibility and SEO
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = language;
+    }
   }, [language]);
 
   const t = (key: string): string => {

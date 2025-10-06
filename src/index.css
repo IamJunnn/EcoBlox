@@ -8,117 +8,111 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 213 47% 95%;
-    --foreground: 230 20% 15%;
+    /* Base (light) */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%; /* near-black navy */
 
     --card: 0 0% 100%;
-    --card-foreground: 230 20% 15%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 230 20% 15%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 292 73% 57%;
+    --primary: 222 66% 22%; /* elegant navy */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 145 73% 57%;
+    --secondary: 160 34% 35%; /* emerald */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 30% 96%;
-    --muted-foreground: 230 15% 50%;
+    --muted: 220 14% 96%; /* subtle gray background */
+    --muted-foreground: 220 12% 46%;
 
-    --accent: 208 73% 57%;
+    --accent: 204 66% 40%; /* refined blue */
     --accent-foreground: 0 0% 100%;
 
-    --tech: 208 73% 57%;
+    --tech: 204 66% 40%;
     --tech-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 72% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 30% 88%;
-    --input: 220 30% 94%;
-    --ring: 292 73% 57%;
+    --border: 220 14% 90%;
+    --input: 220 14% 95%;
+    --ring: 222 66% 22%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Custom EcoBlox Design Tokens - New Three-Color Theme */
-    --learning-primary: 292 73% 57%;
-    --learning-secondary: 145 73% 57%;
-    --learning-accent: 208 73% 57%;
-    --fun-pink: 292 73% 57%;
-    --bright-yellow: 50 95% 60%;
-    --eco-gradient: linear-gradient(135deg, hsl(292 73% 57%), hsl(145 73% 57%));
-    --tech-gradient: linear-gradient(135deg, hsl(208 73% 57%), hsl(292 73% 57%));
-    --nature-tech-gradient: linear-gradient(135deg, hsl(145 73% 57%), hsl(208 73% 57%));
-    --hero-gradient: linear-gradient(135deg, hsl(292 73% 57%) 0%, hsl(145 73% 57%) 50%, hsl(208 73% 57%) 100%);
-    --environmental-gradient: linear-gradient(90deg, hsl(145 73% 57%) 0%, hsl(208 73% 57%) 100%);
-    --action-gradient: linear-gradient(90deg, hsl(208 73% 57%) 0%, hsl(292 73% 57%) 100%);
+    /* Gradients tuned to stable palette */
+    --learning-primary: 222 66% 22%;
+    --learning-secondary: 160 34% 35%;
+    --learning-accent: 204 66% 40%;
+    --fun-pink: 330 55% 48%; /* occasional accent only */
+    --bright-yellow: 44 96% 54%;
+    --eco-gradient: linear-gradient(135deg, hsl(222 66% 22%), hsl(160 34% 35%));
+    --tech-gradient: linear-gradient(135deg, hsl(204 66% 40%), hsl(222 66% 22%));
+    --nature-tech-gradient: linear-gradient(135deg, hsl(160 34% 35%), hsl(204 66% 40%));
+    --hero-gradient: linear-gradient(135deg, hsl(222 66% 22%) 0%, hsl(160 34% 35%) 50%, hsl(204 66% 40%) 100%);
+    --environmental-gradient: linear-gradient(90deg, hsl(160 34% 35%) 0%, hsl(204 66% 40%) 100%);
+    --action-gradient: linear-gradient(90deg, hsl(204 66% 40%) 0%, hsl(222 66% 22%) 100%);
 
-    --shadow-eco: 0 10px 30px -10px hsl(145 73% 57% / 0.3);
-    --shadow-glow: 0 0 40px hsl(292 73% 57% / 0.4);
-    --shadow-tech: 0 8px 25px -8px hsl(208 73% 57% / 0.25);
+    --shadow-eco: 0 10px 30px -10px hsl(160 34% 35% / 0.25);
+    --shadow-glow: 0 0 40px hsl(222 66% 22% / 0.25);
+    --shadow-tech: 0 8px 25px -8px hsl(204 66% 40% / 0.2);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 
-    --radius: 1rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 222 66% 22%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 220 14% 90%;
+    --sidebar-ring: 204 66% 40%;
   }
 
   .dark {
-    --background: 230 30% 8%;
-    --foreground: 220 30% 90%;
+    --background: 222 36% 6%;
+    --foreground: 220 14% 92%;
 
-    --card: 230 25% 10%;
-    --card-foreground: 220 30% 90%;
+    --card: 222 36% 8%;
+    --card-foreground: 220 14% 92%;
 
-    --popover: 230 25% 10%;
-    --popover-foreground: 220 30% 90%;
+    --popover: 222 36% 8%;
+    --popover-foreground: 220 14% 92%;
 
-    --primary: 292 73% 67%;
-    --primary-foreground: 230 30% 8%;
+    --primary: 222 50% 55%;
+    --primary-foreground: 222 36% 6%;
 
-    --secondary: 145 73% 67%;
-    --secondary-foreground: 230 30% 8%;
+    --secondary: 160 34% 45%;
+    --secondary-foreground: 222 36% 6%;
 
-    --muted: 230 25% 12%;
-    --muted-foreground: 220 20% 60%;
+    --muted: 222 24% 12%;
+    --muted-foreground: 220 10% 65%;
 
-    --accent: 208 73% 67%;
-    --accent-foreground: 230 30% 8%;
+    --accent: 204 66% 55%;
+    --accent-foreground: 222 36% 6%;
 
-    --tech: 208 73% 67%;
-    --tech-foreground: 230 30% 8%;
+    --tech: 204 66% 55%;
+    --tech-foreground: 222 36% 6%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 220 30% 90%;
+    --destructive: 0 56% 38%;
+    --destructive-foreground: 220 14% 92%;
 
-    --border: 230 25% 15%;
-    --input: 230 25% 12%;
-    --ring: 292 73% 67%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 222 24% 16%;
+    --input: 222 24% 14%;
+    --ring: 222 50% 55%;
+
+    --sidebar-background: 222 36% 6%;
+    --sidebar-foreground: 220 14% 92%;
+    --sidebar-primary: 222 50% 55%;
+    --sidebar-primary-foreground: 222 36% 6%;
+    --sidebar-accent: 222 24% 12%;
+    --sidebar-accent-foreground: 220 14% 92%;
+    --sidebar-border: 222 24% 12%;
+    --sidebar-ring: 204 66% 55%;
   }
 }
 

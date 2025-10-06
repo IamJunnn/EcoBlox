@@ -64,6 +64,26 @@ const translations = {
     'gameplan.title': 'Game Plan',
     'gameplan.description': 'Students create an interactive sustainability game where they manage energy resources and keep real-world events powered through smart upcycling',
     'gameplan.coreConcept': 'Core Concept: EV Battery Upcycling Game',
+    'gameplan.mechanic.battery': 'Battery Conversion',
+    'gameplan.mechanic.batteryDesc': 'Process used EV batteries into 1kWh blocks',
+    'gameplan.mechanic.transport': 'Transportation',
+    'gameplan.mechanic.transportDesc': 'Move blocks to exchange stations',
+    'gameplan.mechanic.power': 'Power Management',
+    'gameplan.mechanic.powerDesc': 'Supply energy to E-Charger Centers',
+    'gameplan.mechanic.event': 'Event Success',
+    'gameplan.mechanic.eventDesc': 'Keep concerts and events running',
+    'gameplan.exampleTitle': 'Example: K-pop Concert Challenge',
+    'gameplan.challenge': 'The Challenge',
+    'gameplan.challengeDesc': 'A concert with 100 people requires 100 kWh per hour. For a 2-hour concert, students must supply 200 kWh total.',
+    'gameplan.solution': 'The Solution',
+    'gameplan.solutionDesc': 'Students process used EV batteries at the Battery Conversion Center, creating 200 individual 1kWh blocks.',
+    'gameplan.stakes': 'The Stakes',
+    'gameplan.stakesDesc': 'If supply runs low, the concert experiences a blackout! This teaches students that careful energy planning and teamwork are essential.',
+    'gameplan.learningOutcomes': 'Learning Outcomes',
+    'gameplan.outcome.energyPlanning': 'Energy planning and resource management',
+    'gameplan.outcome.sustainabilityConcepts': 'Environmental sustainability concepts',
+    'gameplan.outcome.collaboration': 'Collaborative problem-solving',
+    'gameplan.outcome.realWorldStem': 'Real-world application of STEM skills',
     
     // Timeline
     'timeline.title': '10-Week Program Journey',
@@ -84,6 +104,9 @@ const translations = {
     'timeline.skillDesc': 'Learn specialized skills in your chosen role: Builder, Scripter, or Tester/Planner',
     'timeline.collaborativeDesc': 'Work as a team to build your environmental sustainability game',
     'timeline.launchDesc': 'Final testing, review, and publishing your game to the Tamra Republic platform',
+    'timeline.stat.totalWeeks': 'Total Weeks',
+    'timeline.stat.learningPhases': 'Learning Phases',
+    'timeline.stat.publishedGame': 'Published Game',
     
     // Student Roles
     'roles.title': 'Choose Your Specialization',
@@ -117,6 +140,19 @@ const translations = {
     'roles.keySkills': 'Key Skills:',
     'roles.exampleProjects': 'Example Projects:',
     'roles.learnMore': 'Learn More',
+
+    // Program Highlight stats
+    'program.stats.weeksProgram': 'Weeks Program',
+    'program.stats.minutesPerClass': 'Minutes per Class',
+    'program.stats.studentRoles': 'Student Roles',
+    'program.stats.gameLaunchRate': 'Game Launch Rate',
+
+    // Contact Popup
+    'contact.title': 'Schedule Discovery Call',
+    'contact.description': 'Get in touch with us to schedule your discovery call',
+    'contact.phone': 'Phone',
+    'contact.email': 'Email',
+    'contact.gotIt': 'Got it!'
   },
   ko: {
     // Navigation
@@ -162,6 +198,26 @@ const translations = {
     'gameplan.title': '게임 계획',
     'gameplan.description': '학생들은 에너지 자원을 관리하고 스마트 업사이클링을 통해 실제 이벤트에 전력을 공급하는 상호작용 지속가능성 게임을 만듭니다',
     'gameplan.coreConcept': '핵심 개념: EV 배터리 업사이클링 게임',
+    'gameplan.mechanic.battery': '배터리 전환',
+    'gameplan.mechanic.batteryDesc': '사용된 EV 배터리를 1kWh 블록으로 가공',
+    'gameplan.mechanic.transport': '운송',
+    'gameplan.mechanic.transportDesc': '블록을 교환 스테이션으로 이동',
+    'gameplan.mechanic.power': '전력 관리',
+    'gameplan.mechanic.powerDesc': 'E-충전 센터에 에너지 공급',
+    'gameplan.mechanic.event': '이벤트 성공',
+    'gameplan.mechanic.eventDesc': '콘서트와 이벤트를 지속 운영',
+    'gameplan.exampleTitle': '예시: K-pop 콘서트 챌린지',
+    'gameplan.challenge': '도전 과제',
+    'gameplan.challengeDesc': '100명의 관객이 있는 콘서트는 시간당 100kWh가 필요합니다. 2시간 콘서트에는 총 200kWh를 공급해야 합니다.',
+    'gameplan.solution': '해결 방법',
+    'gameplan.solutionDesc': '학생들은 배터리 전환 센터에서 사용된 EV 배터리를 가공하여 1kWh 블록 200개를 만듭니다.',
+    'gameplan.stakes': '중요성',
+    'gameplan.stakesDesc': '공급이 부족하면 콘서트가 정전됩니다! 이를 통해 세심한 에너지 계획과 팀워크의 중요성을 배웁니다.',
+    'gameplan.learningOutcomes': '학습 성과',
+    'gameplan.outcome.energyPlanning': '에너지 계획 및 자원 관리',
+    'gameplan.outcome.sustainabilityConcepts': '환경 지속가능성 개념',
+    'gameplan.outcome.collaboration': '협력적 문제 해결',
+    'gameplan.outcome.realWorldStem': 'STEM 기술의 실제 적용',
     
     // Timeline
     'timeline.title': '10주 프로그램 여정',
@@ -182,6 +238,9 @@ const translations = {
     'timeline.skillDesc': '선택한 역할에서 전문 기술을 배우세요: 빌더, 스크립터, 또는 테스터/플래너',
     'timeline.collaborativeDesc': '환경 지속가능성 게임을 만들기 위해 팀으로 협력하세요',
     'timeline.launchDesc': '최종 테스트, 검토 및 Tamra Republic 플랫폼에 게임 출판',
+    'timeline.stat.totalWeeks': '총 주차',
+    'timeline.stat.learningPhases': '학습 단계',
+    'timeline.stat.publishedGame': '출판된 게임',
     
     // Student Roles
     'roles.title': '전문 분야 선택',
@@ -215,6 +274,19 @@ const translations = {
     'roles.keySkills': '핵심 기술:',
     'roles.exampleProjects': '예시 프로젝트:',
     'roles.learnMore': '자세히 보기',
+
+    // Program Highlight stats
+    'program.stats.weeksProgram': '주 프로그램',
+    'program.stats.minutesPerClass': '수업 당 분',
+    'program.stats.studentRoles': '학생 역할',
+    'program.stats.gameLaunchRate': '게임 출시율',
+
+    // Contact Popup
+    'contact.title': '상담 예약',
+    'contact.description': '상담 예약을 위해 저희에게 연락해주세요',
+    'contact.phone': '전화',
+    'contact.email': '이메일',
+    'contact.gotIt': '확인'
   }
 };
 

@@ -108,15 +108,15 @@ const ProgramTimeline = () => {
           <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 text-center">
             <div>
               <div className="text-2xl lg:text-3xl font-bold text-primary mb-2">10</div>
-              <div className="text-sm lg:text-base text-muted-foreground">Total Weeks</div>
+              <div className="text-sm lg:text-base text-muted-foreground">{t('timeline.stat.totalWeeks')}</div>
             </div>
             <div>
               <div className="text-2xl lg:text-3xl font-bold text-secondary mb-2">4</div>
-              <div className="text-sm lg:text-base text-muted-foreground">Learning Phases</div>
+              <div className="text-sm lg:text-base text-muted-foreground">{t('timeline.stat.learningPhases')}</div>
             </div>
             <div>
               <div className="text-2xl lg:text-3xl font-bold text-tech mb-2">1</div>
-              <div className="text-sm lg:text-base text-muted-foreground">Published Game</div>
+              <div className="text-sm lg:text-base text-muted-foreground">{t('timeline.stat.publishedGame')}</div>
             </div>
           </div>
         </div>

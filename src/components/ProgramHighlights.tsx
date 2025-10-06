@@ -169,19 +169,19 @@ const ProgramHighlights = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8 bg-card/80 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-eco">
           <div className="text-center">
             <div className="text-2xl lg:text-3xl font-bold text-primary mb-2">10</div>
-            <div className="text-sm lg:text-base text-muted-foreground">Weeks Program</div>
+            <div className="text-sm lg:text-base text-muted-foreground">{t('program.stats.weeksProgram')}</div>
           </div>
           <div className="text-center">
             <div className="text-2xl lg:text-3xl font-bold text-secondary mb-2">60</div>
-            <div className="text-sm lg:text-base text-muted-foreground">Minutes per Class</div>
+            <div className="text-sm lg:text-base text-muted-foreground">{t('program.stats.minutesPerClass')}</div>
           </div>
           <div className="text-center">
             <div className="text-2xl lg:text-3xl font-bold text-tech mb-2">3</div>
-            <div className="text-sm lg:text-base text-muted-foreground">Student Roles</div>
+            <div className="text-sm lg:text-base text-muted-foreground">{t('program.stats.studentRoles')}</div>
           </div>
           <div className="text-center">
             <div className="text-2xl lg:text-3xl font-bold text-accent mb-2">100%</div>
-            <div className="text-sm lg:text-base text-muted-foreground">Game Launch Rate</div>
+            <div className="text-sm lg:text-base text-muted-foreground">{t('program.stats.gameLaunchRate')}</div>
           </div>
         </div>
       </div>

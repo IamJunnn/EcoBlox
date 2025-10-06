@@ -1,51 +1,47 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Gamepad2, Battery, Zap, Music, Users2, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const GamePlan = () => {
+  const { t } = useLanguage();
+  
   return (
     <section id="gameplan" className="pt-20 pb-4 bg-background relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 right-20 w-64 h-64 lg:w-96 lg:h-96 bg-accent rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-64 h-64 lg:w-96 lg:h-96 bg-primary rounded-full blur-3xl" />
-      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
             <Gamepad2 className="h-10 w-10 lg:h-12 lg:w-12 text-primary" />
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-              Game Plan
+              {t('gameplan.title')}
             </h2>
           </div>
 
           {/* Game Preview GIF - First to attract attention */}
           <div className="mb-8">
             <div className="relative max-w-4xl mx-auto">
-              <div className="relative overflow-hidden rounded-2xl shadow-glow border border-border/50 bg-card/20 backdrop-blur-sm">
+              <div className="relative overflow-hidden rounded-2xl border border-border">
                 <img
                   src="/gameplan.gif"
                   alt="EcoBlox Game Plan in Action"
                   className="w-full h-auto object-contain"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
               </div>
             </div>
           </div>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto">
-            Students create an interactive sustainability game where they manage energy resources
-            and keep real-world events powered through smart upcycling
+            {t('gameplan.description')}
           </p>
         </div>
 
         {/* Core Concept Card */}
         <div className="mb-16">
-          <Card className="bg-gradient-to-br from-primary/10 to-secondary/10 border-primary/20 shadow-glow">
+          <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="text-2xl lg:text-3xl font-bold text-center text-foreground mb-4">
-                Core Concept: EV Battery Upcycling Game
+                {t('gameplan.coreConcept')}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">

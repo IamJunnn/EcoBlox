@@ -2,14 +2,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Building, Code2, CheckCircle, ArrowRight } from "lucide-react";
 import studentRolesImage from "@/assets/student-roles.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const roles = [
+const getRoles = (t: (key: string) => string) => [
   {
     id: "builder",
     icon: Building,
-    title: "Builder",
-    subtitle: "3D Design & Architecture",
-    description: "Create stunning 3D environments and structures that bring environmental concepts to life.",
+    title: t('roles.builder'),
+    subtitle: t('roles.builderSubtitle'),
+    description: t('roles.builderDesc'),
     skills: [
       "3D map design and architecture",
       "Environmental landscape creation", 
@@ -19,14 +20,13 @@ const roles = [
     projects: "Design renewable energy facilities, wildlife habitats, and sustainable cities",
     color: "text-primary",
     bgColor: "bg-primary",
-    gradient: "bg-eco-gradient"
   },
   {
     id: "scripter", 
     icon: Code2,
-    title: "Scripter",
-    subtitle: "Game Logic & Programming",
-    description: "Write the code that makes environmental systems work and games come alive.",
+    title: t('roles.scripter'),
+    subtitle: t('roles.scripterSubtitle'),
+    description: t('roles.scripterDesc'),
     skills: [
       "Game logic programming",
       "Environmental system coding",
@@ -36,14 +36,13 @@ const roles = [
     projects: "Program climate simulations, renewable energy systems, and interactive education",
     color: "text-tech",
     bgColor: "bg-tech",
-    gradient: "bg-tech-gradient"
   },
   {
     id: "tester",
     icon: CheckCircle, 
-    title: "Tester/Planner",
-    subtitle: "Quality & Project Management",
-    description: "Ensure games work perfectly and projects stay on track for successful launches.",
+    title: t('roles.tester'),
+    subtitle: t('roles.testerSubtitle'),
+    description: t('roles.testerDesc'),
     skills: [
       "Quality assurance processes",
       "Project management tools",
@@ -53,36 +52,35 @@ const roles = [
     projects: "Coordinate team efforts, test environmental accuracy, and manage game launches",
     color: "text-secondary",
     bgColor: "bg-secondary", 
-    gradient: "bg-nature-tech-gradient"
   }
 ];
 
 const StudentRoles = () => {
+  const { t } = useLanguage();
+  
   return (
     <section id="roles" className="pt-4 pb-20 bg-muted/30 relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Choose Your Specialization
+            {t('roles.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Every student chooses a role that matches their interests and strengths. 
-            All roles collaborate to create impactful environmental games.
+            {t('roles.description')}
           </p>
           
           
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {roles.map((role, index) => {
+          {getRoles(t).map((role, index) => {
             const Icon = role.icon;
             return (
               <Card 
                 key={role.id}
-                className="hover:shadow-glow transition-all duration-500 hover:scale-105 transform bg-card/80 backdrop-blur-sm border-border/50 overflow-hidden group"
+                className="hover:shadow-md transition-all duration-300 bg-card border-border overflow-hidden"
               >
                 <CardHeader className="relative">
-                  <div className={`absolute inset-0 ${role.gradient} opacity-10 group-hover:opacity-20 transition-opacity`} />
                   <div className="relative z-10">
                     <div className={`w-16 h-16 ${role.bgColor}/10 rounded-2xl flex items-center justify-center mx-auto mb-4`}>
                       <Icon className={`h-8 w-8 ${role.color}`} />
@@ -102,7 +100,7 @@ const StudentRoles = () => {
                   </p>
                   
                   <div>
-                    <h4 className="font-semibold text-foreground mb-3">Key Skills:</h4>
+                    <h4 className="font-semibold text-foreground mb-3">{t('roles.keySkills')}</h4>
                     <ul className="space-y-2">
                       {role.skills.map((skill, skillIndex) => (
                         <li key={skillIndex} className="flex items-start gap-2">
@@ -114,7 +112,7 @@ const StudentRoles = () => {
                   </div>
                   
                   <div className={`p-4 ${role.bgColor}/5 rounded-lg border border-${role.bgColor}/20`}>
-                    <h4 className="font-semibold text-foreground mb-2">Example Projects:</h4>
+                    <h4 className="font-semibold text-foreground mb-2">{t('roles.exampleProjects')}</h4>
                     <p className="text-sm text-muted-foreground">{role.projects}</p>
                   </div>
                   
@@ -122,7 +120,7 @@ const StudentRoles = () => {
                     variant="outline" 
                     className={`w-full group-hover:${role.bgColor} group-hover:text-white transition-colors`}
                   >
-                    Learn More About {role.title.split(' ')[0]}
+                    {t('roles.learnMore')}
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
                 </CardContent>

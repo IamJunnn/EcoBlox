@@ -1,53 +1,55 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { GamepadIcon, Leaf, Users, Shield, Trophy, Code, Clock, Zap } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const highlights = [
+const getHighlights = (t: (key: string) => string) => [
   {
     icon: GamepadIcon,
-    title: "Real Game Development",
-    description: "Students build actual games in Roblox Studio that launch on our platform",
+    title: t('program.realGameDev'),
+    description: t('program.realGameDevDesc'),
     color: "text-tech",
     bgColor: "bg-tech/10"
   },
   {
     icon: Leaf,
-    title: "Environmental Education",
-    description: "Every project addresses real environmental challenges and solutions",
+    title: t('program.environmentalEdu'),
+    description: t('program.environmentalEduDesc'),
     color: "text-primary",
     bgColor: "bg-primary/10"
   },
   {
     icon: Users,
-    title: "Team Collaboration",
-    description: "Work in specialized roles with project management skills for real outcomes",
+    title: t('program.teamCollab'),
+    description: t('program.teamCollabDesc'),
     color: "text-secondary",
     bgColor: "bg-secondary/10"
   },
   {
     icon: Shield,
-    title: "Online Safety Training",
-    description: "Comprehensive digital citizenship and healthy gaming culture education",
+    title: t('program.onlineSafety'),
+    description: t('program.onlineSafetyDesc'),
     color: "text-accent",
     bgColor: "bg-accent/10"
   },
   {
     icon: Trophy,
-    title: "Actual Game Launch",
-    description: "Games are published on Tamra Republic platform for real players",
+    title: t('program.actualLaunch'),
+    description: t('program.actualLaunchDesc'),
     color: "text-tech",
     bgColor: "bg-tech/10"
   },
   {
     icon: Code,
-    title: "Technical Skills",
-    description: "Learn Lua scripting, 3D design, and project management fundamentals",
+    title: t('program.technicalSkills'),
+    description: t('program.technicalSkillsDesc'),
     color: "text-primary",
     bgColor: "bg-primary/10"
   }
 ];
 
 const ProgramHighlights = () => {
+  const { t } = useLanguage();
   const [showGif, setShowGif] = useState(false);
   const [showSection1Gif, setShowSection1Gif] = useState(false);
   const [showSection2Gif, setShowSection2Gif] = useState(false);
@@ -56,58 +58,52 @@ const ProgramHighlights = () => {
 
   return (
     <section id="program" className="py-20 bg-background relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-eco-gradient rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-tech-gradient rounded-full blur-3xl" />
-      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Why EcoBlox is Different
+            {t('program.title')}
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Unlike traditional coding classes, EcoBlox combines environmental education,
-            real game development, and digital citizenship in a comprehensive STEM program
+            {t('program.description')}
           </p>
         </div>
 
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
-          {highlights.map((highlight, index) => {
+          {getHighlights(t).map((highlight, index) => {
             const Icon = highlight.icon;
             return (
               <Card
                 key={index}
-                className="hover:shadow-eco transition-all duration-300 hover:scale-105 transform border-border/50 bg-card/50 backdrop-blur-sm relative overflow-hidden"
+                className="hover:shadow-md transition-all duration-300 border-border relative overflow-hidden"
                 onMouseEnter={() => {
-                  if (highlight.title === "Technical Skills") {
+                  if (highlight.title === t('program.technicalSkills')) {
                     setShowGif(true);
-                  } else if (highlight.title === "Real Game Development") {
+                  } else if (highlight.title === t('program.realGameDev')) {
                     setShowSection1Gif(true);
-                  } else if (highlight.title === "Environmental Education") {
+                  } else if (highlight.title === t('program.environmentalEdu')) {
                     setShowSection2Gif(true);
-                  } else if (highlight.title === "Team Collaboration") {
+                  } else if (highlight.title === t('program.teamCollab')) {
                     setShowSection3Gif(true);
-                  } else if (highlight.title === "Online Safety Training") {
+                  } else if (highlight.title === t('program.onlineSafety')) {
                     setShowSection4Gif(true);
                   }
                 }}
                 onMouseLeave={() => {
-                  if (highlight.title === "Technical Skills") {
+                  if (highlight.title === t('program.technicalSkills')) {
                     setShowGif(false);
-                  } else if (highlight.title === "Real Game Development") {
+                  } else if (highlight.title === t('program.realGameDev')) {
                     setShowSection1Gif(false);
-                  } else if (highlight.title === "Environmental Education") {
+                  } else if (highlight.title === t('program.environmentalEdu')) {
                     setShowSection2Gif(false);
-                  } else if (highlight.title === "Team Collaboration") {
+                  } else if (highlight.title === t('program.teamCollab')) {
                     setShowSection3Gif(false);
-                  } else if (highlight.title === "Online Safety Training") {
+                  } else if (highlight.title === t('program.onlineSafety')) {
                     setShowSection4Gif(false);
                   }
                 }}
               >
-                {highlight.title === "Technical Skills" && showGif ? (
+                {highlight.title === t('program.technicalSkills') && showGif ? (
                   <div className="absolute inset-0 p-4">
                     <img
                       src="/section6.gif"
@@ -115,7 +111,7 @@ const ProgramHighlights = () => {
                       className="w-full h-full object-fill rounded-lg"
                     />
                   </div>
-                ) : highlight.title === "Real Game Development" && showSection1Gif ? (
+                ) : highlight.title === t('program.realGameDev') && showSection1Gif ? (
                   <div className="absolute inset-0 p-4">
                     <img
                       src="/section1.gif"
@@ -123,7 +119,7 @@ const ProgramHighlights = () => {
                       className="w-full h-full object-fill rounded-lg"
                     />
                   </div>
-                ) : highlight.title === "Environmental Education" && showSection2Gif ? (
+                ) : highlight.title === t('program.environmentalEdu') && showSection2Gif ? (
                   <div className="absolute inset-0 p-4">
                     <img
                       src="/section2.gif"
@@ -131,7 +127,7 @@ const ProgramHighlights = () => {
                       className="w-full h-full object-fill rounded-lg"
                     />
                   </div>
-                ) : highlight.title === "Team Collaboration" && showSection3Gif ? (
+                ) : highlight.title === t('program.teamCollab') && showSection3Gif ? (
                   <div className="absolute inset-0 p-4">
                     <img
                       src="/section3.gif"
@@ -139,7 +135,7 @@ const ProgramHighlights = () => {
                       className="w-full h-full object-fill rounded-lg"
                     />
                   </div>
-                ) : highlight.title === "Online Safety Training" && showSection4Gif ? (
+                ) : highlight.title === t('program.onlineSafety') && showSection4Gif ? (
                   <div className="absolute inset-0 p-4">
                     <img
                       src="/section4.gif"
@@ -173,19 +169,19 @@ const ProgramHighlights = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8 bg-card/80 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-eco">
           <div className="text-center">
             <div className="text-2xl lg:text-3xl font-bold text-primary mb-2">10</div>
-            <div className="text-sm lg:text-base text-muted-foreground">Weeks Program</div>
+            <div className="text-sm lg:text-base text-muted-foreground">{t('program.stats.weeksProgram')}</div>
           </div>
           <div className="text-center">
             <div className="text-2xl lg:text-3xl font-bold text-secondary mb-2">60</div>
-            <div className="text-sm lg:text-base text-muted-foreground">Minutes per Class</div>
+            <div className="text-sm lg:text-base text-muted-foreground">{t('program.stats.minutesPerClass')}</div>
           </div>
           <div className="text-center">
             <div className="text-2xl lg:text-3xl font-bold text-tech mb-2">3</div>
-            <div className="text-sm lg:text-base text-muted-foreground">Student Roles</div>
+            <div className="text-sm lg:text-base text-muted-foreground">{t('program.stats.studentRoles')}</div>
           </div>
           <div className="text-center">
             <div className="text-2xl lg:text-3xl font-bold text-accent mb-2">100%</div>
-            <div className="text-sm lg:text-base text-muted-foreground">Game Launch Rate</div>
+            <div className="text-sm lg:text-base text-muted-foreground">{t('program.stats.gameLaunchRate')}</div>
           </div>
         </div>
       </div>

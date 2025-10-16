@@ -28,7 +28,7 @@ const translations = {
     'nav.studentRoles': 'Student Roles',
     'nav.scheduleCall': 'Schedule Discovery Call',
     'nav.joinCohort': 'Join Next Cohort',
-    'nav.ecoblox': 'EcoBlox',
+    'nav.ecoblox': '3EcoBlox',
     
     // Hero Section
     'hero.title': 'Turn Gaming Passion into',
@@ -45,8 +45,8 @@ const translations = {
     'hero.realLearning': 'Real Learning',
     
     // Program Highlights
-    'program.title': 'Why EcoBlox is Different',
-    'program.description': 'Unlike traditional coding classes, EcoBlox combines environmental education, real game development, and digital citizenship in a comprehensive STEM program',
+    'program.title': 'Why 3EcoBlox is Different',
+    'program.description': 'Unlike traditional coding classes, 3EcoBlox combines environmental education, real game development, and digital citizenship in a comprehensive STEM program',
     'program.realGameDev': 'Real Game Development',
     'program.realGameDevDesc': 'Students build actual games in Roblox Studio that launch on our platform',
     'program.environmentalEdu': 'Environmental Education',
@@ -131,7 +131,7 @@ const translations = {
     'footer.quick.timeline': 'Timeline',
     'footer.quick.safety': 'Safety & Digital Citizenship',
     'footer.quick.roles': 'Student Roles',
-    'footer.copyright': '© 2024 EcoBlox. All rights reserved. Building the next generation of environmental innovators.',
+    'footer.copyright': '© 2024 3EcoBlox. All rights reserved. Building the next generation of environmental innovators.',
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Service',
     'footer.contactLink': 'Contact',
@@ -291,19 +291,21 @@ const translations = {
 };
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
-
-  useEffect(() => {
-    // Load saved language preference
-    const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'ko')) {
-      setLanguage(savedLanguage);
-    }
-  }, []);
+  const [language, setLanguage] = useState<Language>(() => {
+    const savedLanguage = localStorage.getItem('language') as Language | null;
+    return savedLanguage === 'ko' ? 'ko' : 'en';
+  });
 
   useEffect(() => {
     // Save language preference
     localStorage.setItem('language', language);
+  }, [language]);
+
+  useEffect(() => {
+    // Reflect language in HTML tag for accessibility and SEO
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = language;
+    }
   }, [language]);
 
   const t = (key: string): string => {

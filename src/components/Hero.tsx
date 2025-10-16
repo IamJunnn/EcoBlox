@@ -59,7 +59,7 @@ const Hero = () => {
               </ContactPopup>
               <VideoPopup
                 videoUrl="https://vimeo.com/manage/videos/1111840426"
-                title="EcoBlox Sample Class"
+                title="3EcoBlox Sample Class"
               >
                 <Button
                   variant="outline"

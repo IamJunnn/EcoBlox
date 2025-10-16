@@ -93,7 +93,7 @@ const Footer = () => {
               </li>
               <li>
                 <ContactPopup>
-                  <Button variant="outline" className="w-full justify-start border-background/20 text-background hover:bg-background/10 hover:scale-105 transition-all duration-300">
+                  <Button variant="accent" className="w-full justify-start hover:scale-105 transition-all duration-300">
                     <Mail className="h-4 w-4 mr-2" />
                     {t('footer.contactUs')}
                   </Button>

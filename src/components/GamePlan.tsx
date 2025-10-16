@@ -23,7 +23,7 @@ const GamePlan = () => {
               <div className="relative overflow-hidden rounded-2xl border border-border">
                 <img
                   src="/gameplan.gif"
-                  alt="EcoBlox Game Plan in Action"
+                  alt="3EcoBlox Game Plan in Action"
                   className="w-full h-auto object-contain"
                   loading="lazy"
                 />

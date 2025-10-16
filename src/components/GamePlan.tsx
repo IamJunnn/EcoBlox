@@ -17,13 +17,13 @@ const GamePlan = () => {
             </h2>
           </div>
 
-          {/* Game Preview GIF - First to attract attention */}
+          {/* Game Plan Visual */}
           <div className="mb-8">
             <div className="relative max-w-4xl mx-auto">
-              <div className="relative overflow-hidden rounded-2xl border border-border">
+              <div className="relative overflow-hidden rounded-2xl border border-border bg-background">
                 <img
-                  src="/gameplan.gif"
-                  alt="3EcoBlox Game Plan in Action"
+                  src="/Ecoblox_Flyer.png"
+                  alt="3EcoBlox Game Plan Flyer"
                   className="w-full h-auto object-contain"
                   loading="lazy"
                 />
